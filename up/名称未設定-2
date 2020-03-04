@@ -1,0 +1,32 @@
+     <main>
+        <form action="mypage_update.php" method="post" enctype="multipart/form-data">
+        <div class="form_contents">
+          <h2>会員情報</h2>
+               <div class="name">
+                  <label>氏名</label><br>
+                  <input type="text" class="formbox" size="40" name="name" value="<?php echo $_SESSION['name']?>" required> 
+               </div>                     
+                <div class="mail">
+                    <label>メールアドレス</label><br>
+                    <input type="text" class="formbox" size="40" name="mail" pattern="^[a-z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" value="<?php echo $_SESSION['mail']?>" required>
+                </div>
+                <div class="password">
+                    <label>パスワード</label><br>
+                    <input type="password" class="formbox" size="40" name="password" id="password" pattern="^[a-zA-Z0-9]{6,}$" value="<?php echo $_SESSION['password']?>" required>
+                </div>  
+                <div class="picture">
+                    <label>プロフィール写真</label><br>
+                    <img src="<?php echo $_SESSION['picture']; ?>">
+                </div>
+                <div class="comments">
+                    <label>コメント</label><br>
+                    <textarea rows="5" cols="45" name="comments" value="<?php echo $_SESSION['comments']?>"　required></textarea>
+                </div>
+                <div class="henkou">
+                    <input type="submit" class="submit_button" size="35" value="この内容に変更する">
+                </div>
+        </div>
+            
+        </form>
+    
+    </main>
